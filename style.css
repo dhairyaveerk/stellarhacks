@@ -1,7 +1,8 @@
 body{
   background-color: rgb(244, 241, 254);
-  text-align: center;
 }
+h2{
+  text-align: center;
 }
 .array {
   display: grid;
