@@ -31,10 +31,10 @@ p {
   color: white;
   padding: 10px 20px;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 10px; /* Adds spacing between the button and the text */
+  margin-top: 10px;
 }
 
 .button:hover {
@@ -45,6 +45,10 @@ p {
 .button:active {
   transform: scale(0.95);
 }
+.game {
+  background-color: white;
+   border-radius: 8px;
+  
   
   
   
