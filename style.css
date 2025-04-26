@@ -56,6 +56,13 @@ p {
 .button a:active {
   transform: scale(0.95);
 }
+.game {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
   
   
