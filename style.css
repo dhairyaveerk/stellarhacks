@@ -2,9 +2,11 @@ body{
   background-color: rgb(244, 241, 254);
 }
 h2 {
+  text-color: purple
   text-align: center;
 }
 h3{
+  text-color: purple
   text-align: center;
 div{
   padding-bottom: 10px;
