@@ -26,8 +26,11 @@ p {
 }
 .array {
   display: grid;
-  row-gap: 25px;
-  column-gap: 25px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+  width: 200px;
+  margin: 0 auto;
 }
 .1 {
   grid-row: 1 / span 3;
