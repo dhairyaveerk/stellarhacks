@@ -18,7 +18,12 @@ div{
   background-color: white;
   text-align: center;
 }
-
+.array > h3{
+  text-align: center;
+}
+p {
+  text-align: center;
+}
 .array {
   display: grid;
   row-gap: 25px;
