@@ -1,13 +1,14 @@
 body{
   text-align: center;
   background-color: rgb(244, 241, 254);
+  padding-bottom: 30px;
 }
 h2 {
-  text-color: purple
+  text-color: purple;
   text-align: center;
 }
 h3{
-  text-color: purple
+  text-color: purple;
   text-align: center;
 div{
   padding-bottom: 10px;
