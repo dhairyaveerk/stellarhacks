@@ -17,7 +17,7 @@ p {
 .array {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-template-rows: repeat(3, 300px); /* 3 rows */
+  grid-template-rows: repeat(3, 150px); /* 3 rows */
   gap: 20px;
   width: 90%;
   max-width: 800px;
