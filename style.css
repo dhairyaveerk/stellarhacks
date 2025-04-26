@@ -1,6 +1,15 @@
 body{
-  background-color: rgb(244, 241, 254)
+  background-color: rgb(244, 241, 254);
+  text-align: center;
+}
 }
 .array {
   display: grid;
+  row-gap: 25px;
+  column-gap: 25px;
 }
+.1 {
+  grid-row: 1 / span 3;
+  grid-column: 1 / span 2;
+}
+  
