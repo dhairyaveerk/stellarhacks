@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Journal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Daily Journal</h1>
+    <form id="journalForm">
+        <label for="journalDate">Date:</label>
+        <input type="date" id="journalDate" name="journalDate" required><br><br>
+
+        <label for="journalEntry">Journal Entry:</label><br>
+        <textarea id="journalEntry" name="journalEntry" rows="5" cols="50" required></textarea><br><br>
+
+        <button type="submit">Submit Journal</button>
+    </form>
+    <h2>Previous Entries</h2>
+    <div id="entriesList">
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
