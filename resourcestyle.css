@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(244, 241, 254);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+}
+
+header {
+    padding: 30px;
+}
+
+h1 {
+    color: purple;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+section.resources {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.resource-card {
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card h3 {
+    color: purple;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: purple;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: darkmagenta;
+    transform: scale(1.05);
+}
