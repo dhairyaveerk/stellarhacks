@@ -33,8 +33,11 @@ journalForm.addEventListener('submit', function(event) {
         // Get existing entries from local storage
         const entries = JSON.parse(localStorage.getItem('entries')) || [];
 
-        // Add the new entry
-        const newEntry = { date, entry };
+        // Generate AI comment/tip based on the entry
+        const aiComment = generateAIComment(entry);
+
+        // Add the new entry with the AI comment
+        const newEntry = { date, entry, aiComment };
         entries.push(newEntry);
 
         // Save updated entries to local storage
@@ -47,6 +50,26 @@ journalForm.addEventListener('submit', function(event) {
         displayEntries();
     }
 });
+
+// Function to generate an AI comment or tip based on the journal entry
+function generateAIComment(entry) {
+    const positiveWords = ['happy', 'excited', 'joy', 'grateful', 'good'];
+    const stressWords = ['stress', 'tired', 'overwhelmed', 'anxiety'];
+
+    let aiComment = 'Thanks for sharing your thoughts!';
+
+    // Check for positive words
+    if (positiveWords.some(word => entry.toLowerCase().includes(word))) {
+        aiComment = 'It sounds like you had a great day! Keep the positive energy going!';
+    }
+    
+    // Check for stress-related words
+    else if (stressWords.some(word => entry.toLowerCase().includes(word))) {
+        aiComment = 'It seems like you’re feeling a bit stressed. Try taking deep breaths and doing something relaxing!';
+    }
+
+    return aiComment;
+}
 
 // Function to display all journal entries
 function displayEntries() {
@@ -63,6 +86,7 @@ function displayEntries() {
             entryDiv.innerHTML = `
                 <strong>${entry.date}</strong>
                 <p>${entry.entry}</p>
+                <p><strong>AI Comment:</strong> ${entry.aiComment}</p>
                 <button class="delete-btn" data-index="${index}">Delete</button>
             `;
             entriesList.appendChild(entryDiv);
