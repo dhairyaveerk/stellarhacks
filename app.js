@@ -69,11 +69,19 @@ function displayEntries() {
     }
 }
 
-// Handle clear entries button click
+// Handle clear entries button click with confirmation
 clearEntriesButton.addEventListener('click', function() {
-    // Remove all journal entries from local storage
-    localStorage.removeItem('entries');
+    // Ask for confirmation before clearing all entries
+    const confirmation = window.confirm('Are you sure you want to clear all journal entries? This action cannot be undone.');
 
-    // Clear the displayed entries
-    entriesList.innerHTML = '<p>All entries have been cleared.</p>';
+    if (confirmation) {
+        // Remove all journal entries from local storage
+        localStorage.removeItem('entries');
+
+        // Clear the displayed entries
+        entriesList.innerHTML = '<p>All entries have been cleared.</p>';
+    } else {
+        // If user cancels, do nothing
+        return;
+    }
 });
