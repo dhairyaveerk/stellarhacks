@@ -51,6 +51,9 @@ function displayEntries() {
 }
 
 clearEntriesButton.addEventListener('click', function() {
-    localStorage.removeItem('entries');
-    entriesList.innerHTML = '<p>All entries have been cleared.</p>';
-});
+     const confirmation = window.confirm('Are you sure you want to clear all journal entries? This action cannot be undone.');
+if (confirmation) {
+        localStorage.removeItem('entries');
+        entriesList.innerHTML = '<p>All entries have been cleared.</p>';
+    } else {
+        return;
