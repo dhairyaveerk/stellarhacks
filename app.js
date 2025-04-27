@@ -65,7 +65,7 @@ function generateAIComment(entry) {
     
     // Check for stress-related words
     else if (stressWords.some(word => entry.toLowerCase().includes(word))) {
-        aiComment = 'It seems like you’re feeling a bit stressed. Try taking deep breaths and doing something relaxing!';
+        aiComment = 'It seems like you’re feeling a bit stressed. Try taking deep breaths and playing our soothing games!';
     }
 
     return aiComment;
