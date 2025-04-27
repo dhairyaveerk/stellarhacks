@@ -25,7 +25,7 @@ textarea {
     border: 1px solid #ccc;
 }
 
-.button {
+button {
   display: inline-block;
   background-color: #B04EFF;
   color: white;
@@ -37,12 +37,12 @@ textarea {
   margin-top: 10px;
 }
 
-.button:hover {
+button:hover {
   background-color: darkmagenta;
   transform: scale(1.1);
 }
 
-.button:active {
+button:active {
   transform: scale(0.95);
 }
 #entriesList {
