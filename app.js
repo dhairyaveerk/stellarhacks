@@ -57,16 +57,41 @@ function displayEntries() {
         entriesList.innerHTML = '<p>No entries yet. Start writing!</p>';
     } else {
         // Display each entry
-        entries.forEach(entry => {
+        entries.forEach((entry, index) => {
             const entryDiv = document.createElement('div');
             entryDiv.classList.add('entry');
             entryDiv.innerHTML = `
                 <strong>${entry.date}</strong>
                 <p>${entry.entry}</p>
+                <button class="delete-btn" data-index="${index}">Delete</button>
             `;
             entriesList.appendChild(entryDiv);
         });
+
+        // Add event listeners to all delete buttons
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const index = this.getAttribute('data-index');
+                deleteEntry(index);
+            });
+        });
     }
+}
+
+// Function to delete an individual entry
+function deleteEntry(index) {
+    // Get existing entries from local storage
+    const entries = JSON.parse(localStorage.getItem('entries')) || [];
+
+    // Remove the entry at the specified index
+    entries.splice(index, 1);
+
+    // Save the updated entries back to local storage
+    localStorage.setItem('entries', JSON.stringify(entries));
+
+    // Re-display the updated list of entries
+    displayEntries();
 }
 
 // Handle clear entries button click with confirmation
