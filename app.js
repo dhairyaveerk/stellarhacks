@@ -53,8 +53,8 @@ journalForm.addEventListener('submit', function(event) {
 
 // Function to generate an AI comment or tip based on the journal entry
 function generateAIComment(entry) {
-    const positiveWords = ['happy', 'excited', 'joy', 'grateful', 'ecstatic', 'satisfied', 'satisfy'];
-    const stressWords = ['stress', 'tired', 'overwhelmed', 'anxiety', 'sad', 'depress', 'unhappy', 'heartbroken', 'mourn'];
+    const positiveWords = ['happy', 'excited', 'joy', 'grateful', 'ecstatic', 'satisfied', 'satisfy', 'I am feeling good'];
+    const stressWords = ['stress', 'tired', 'overwhelmed', 'anxiety', 'sad', 'depress', 'unhappy', 'heartbroken', 'mourn', 'not feeling good'];
 
     let aiComment = 'Thanks for sharing your thoughts!';
 
