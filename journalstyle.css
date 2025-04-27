@@ -61,3 +61,22 @@ button:active {
 .entry strong {
     font-size: 1.2em;
 }
+.button {
+  display: inline-block;
+  background-color: #B04EFF;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: darkmagenta;
+  transform: scale(1.1);
+}
+
+.button:active {
+  transform: scale(0.95);
