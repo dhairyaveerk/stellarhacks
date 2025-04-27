@@ -25,19 +25,26 @@ textarea {
     border: 1px solid #ccc;
 }
 
-button {
-    background-color: #4a148c;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+.button {
+  display: inline-block;
+  background-color: #B04EFF;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
 }
 
-button:hover {
-    background-color: #6a1b9a;
+.button:hover {
+  background-color: darkmagenta;
+  transform: scale(1.1);
 }
 
+.button:active {
+  transform: scale(0.95);
+}
 #entriesList {
     margin-top: 30px;
     padding: 10px;
