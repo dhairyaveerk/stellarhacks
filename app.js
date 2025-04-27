@@ -1,13 +1,9 @@
-// Get references to the form and display area
 const journalForm = document.getElementById('journalForm');
 const entriesList = document.getElementById('entriesList');
-
-// Load existing journal entries from local storage
+const clearEntriesButton = document.getElementById('clearEntriesButton');
 window.onload = function() {
     displayEntries();
 };
-
-// Handle form submission
 journalForm.addEventListener('submit', function(event) {
     event.preventDefault();  // Prevent page reload on form submission
 
@@ -15,25 +11,14 @@ journalForm.addEventListener('submit', function(event) {
     const entry = document.getElementById('journalEntry').value;
 
     if (date && entry) {
-        // Get existing entries from local storage
         const entries = JSON.parse(localStorage.getItem('entries')) || [];
-
-        // Add the new entry
         const newEntry = { date, entry };
         entries.push(newEntry);
-
-        // Save updated entries to local storage
         localStorage.setItem('entries', JSON.stringify(entries));
-
-        // Clear the form
         journalForm.reset();
-
-        // Display the updated list of entries
         displayEntries();
     }
 });
-
-// Function to display all journal entries
 function displayEntries() {
     const entries = JSON.parse(localStorage.getItem('entries')) || [];
     entriesList.innerHTML = ''; // Clear the existing list
@@ -41,7 +26,6 @@ function displayEntries() {
     if (entries.length === 0) {
         entriesList.innerHTML = '<p>No entries yet. Start writing!</p>';
     } else {
-        // Display each entry
         entries.forEach(entry => {
             const entryDiv = document.createElement('div');
             entryDiv.classList.add('entry');
@@ -53,3 +37,9 @@ function displayEntries() {
         });
     }
 }
+clearEntriesButton.addEventListener('click', function() {
+    localStorage.removeItem('entries');
+
+    // Clear the displayed entries
+    entriesList.innerHTML = '<p>All entries have been cleared.</p>';
+});
