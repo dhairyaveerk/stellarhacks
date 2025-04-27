@@ -1,13 +1,25 @@
 const journalForm = document.getElementById('journalForm');
 const entriesList = document.getElementById('entriesList');
 const clearEntriesButton = document.getElementById('clearEntriesButton');
+const journalDate = document.getElementById('journalDate'); 
 window.onload = function() {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    let mm = today.getMonth() + 1;
+    let dd = today.getDate();
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+
+    const currentDate = yyyy + '-' + mm + '-' + dd;
+    journalDate.value = currentDate;
+
     displayEntries();
 };
-journalForm.addEventListener('submit', function(event) {
-    event.preventDefault();  // Prevent page reload on form submission
 
-    const date = document.getElementById('journalDate').value;
+journalForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const date = journalDate.value;
     const entry = document.getElementById('journalEntry').value;
 
     if (date && entry) {
@@ -21,7 +33,7 @@ journalForm.addEventListener('submit', function(event) {
 });
 function displayEntries() {
     const entries = JSON.parse(localStorage.getItem('entries')) || [];
-    entriesList.innerHTML = ''; // Clear the existing list
+    entriesList.innerHTML = '';
 
     if (entries.length === 0) {
         entriesList.innerHTML = '<p>No entries yet. Start writing!</p>';
@@ -37,9 +49,8 @@ function displayEntries() {
         });
     }
 }
+
 clearEntriesButton.addEventListener('click', function() {
     localStorage.removeItem('entries');
-
-    // Clear the displayed entries
     entriesList.innerHTML = '<p>All entries have been cleared.</p>';
 });
