@@ -60,7 +60,7 @@ function generateAIComment(entry) {
 
     // Check for positive words
     if (positiveWords.some(word => entry.toLowerCase().includes(word))) {
-        aiComment = 'It sounds like you had a great day! Keep the positive energy going!';
+        aiComment = "It sounds like you had a great day! Keep the positive energy going! Don't forget to check in tommorow!!";
     }
     
     // Check for stress-related words
